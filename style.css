@@ -105,7 +105,7 @@ img{
 
 /* ===== ABOUT SECTION ===== */
 .about-section {
-    padding: 0px 40px 0;
+    padding: 0px 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -118,15 +118,92 @@ img{
 
 .about-text {
     flex: 1;
-    text-align: center;
+    text-align: left;
+    position: relative;
+}
+
+/* 大字水印裝飾 - SVG 寫字路徑動畫 */
+.about-watermark {
+    position: absolute;
+    right: -120px;
+    top: -24px;
+    width: clamp(240px, 38vw, 460px);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    overflow: visible;
+}
+
+.about-watermark-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 200px;
+    font-weight: 900;
+    fill: none;
+    stroke: rgba(26, 26, 26, 0.09);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    animation: draw-hy 2.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+@keyframes draw-hy {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .about-text h2 {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 800;
     color: #1a1a1a;
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 小標籤 badge */
+.about-text h2 small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #7A8F7D;
+    background: rgba(122, 143, 125, 0.12);
+    border: 1px solid rgba(122, 143, 125, 0.28);
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin-bottom: 14px;
+    vertical-align: middle;
+}
+
+.about-text h2 small::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #7A8F7D;
+    border-radius: 50%;
+}
+
+/* 標題底部分隔線 */
+.about-text h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2.5px;
+    background: linear-gradient(to right, #7A8F7D, rgba(212, 163, 115, 0.6));
+    border-radius: 2px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 
 .about-text h2 strong {
@@ -135,21 +212,17 @@ img{
 
 .about-text p {
     font-size: 1.1rem;
-    line-height: 1.9;
-    color: #555;
+    line-height: 1.5;
+    color: #666;
+    position: relative;
+    z-index: 1;
 }
 
 /* ===== RESUME / FEATURES GRID ===== */
 .resume-section {
-    padding: 0px 40px 100px;
-    max-width: 1600px;
+    padding: 0px 40px;
+    max-width: 1400px;
     margin: 0 auto;
-}
-
-.resume-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 10px;
 }
 
 .resume-column{
@@ -218,53 +291,118 @@ img{
 /* Resume columns */
 .resume-column h3 {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.25rem;
+    font-size: 0.975rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #1a1a1a;
-    margin-bottom: 24px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #1a1a1a;
+    letter-spacing: 4px;
+    color: #999;
+    margin-bottom: 16px;
+    padding-bottom: 0;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resume-column h3::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #7A8F7D;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .resume-item {
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    padding: 20px 22px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+}
+
+.resume-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 3px;
+    background: linear-gradient(to bottom, #7A8F7D, #D4A373);
+    border-radius: 0 3px 3px 0;
+    opacity: 0;
+    transform: scaleY(0.4);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.resume-item:hover {
+    transform: translateY(-4px) translateX(2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.resume-item:hover::after {
+    opacity: 1;
+    transform: scaleY(1);
 }
 
 .resume-item-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
 }
 
 .resume-item-sub {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: #888;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .contact-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 14px;
+    margin-bottom: 10px;
     text-decoration: none;
     color: #1a1a1a;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    padding: 18px 20px;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease,
+                color 0.3s ease,
+                background 0.35s ease;
 }
 
 .contact-link:hover {
     color: #7A8F7D;
+    transform: translateY(-4px) translateX(2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .contact-icon {
-    width: 28px;
-    height: 28px;
-    background: #f0f0f0;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, rgba(122,143,125,0.18), rgba(122,143,125,0.08));
+    border: 1px solid rgba(122, 143, 125, 0.25);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,7 +477,7 @@ img{
 
 /* ===== PROJECTS GRID ===== */
 .projects-section {
-    padding: 40px 40px 100px;
+    padding: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -480,10 +618,30 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .resume-grid,
     .resume-column-grid{
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
+        display: flex;
+        flex-wrap: wrap;
         gap:20px
+    }
+
+    .resume-column-grid > div{
+        width: 100%;
+    }
+
+    .resume-column-grid > div:nth-child(3){
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .resume-column-grid > div:nth-child(3) h3{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .resume-column-grid > div:nth-child(3) > .contact-link{
+        width:calc(50% - 0.5rem);
     }
 
     .id-badge {
@@ -523,8 +681,14 @@ footer {
         gap: 30px;
     }
 
-    .resume-grid {
-        grid-template-columns: 1fr;
+    .about-watermark {
+        width: clamp(160px, 50vw, 280px);
+        right: 0;
+        top: -10px;
+    }
+
+    .about-text h2 {
+        letter-spacing: -1px;
     }
 
     .id-badge {
@@ -549,11 +713,13 @@ footer {
         padding-right: 20px;
     }
 
+    .resume-section{
+        padding-top: 4rem;
+    }
+
     .about-section{
         padding-top: 1rem;
         padding-bottom: 1rem;
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .projects-section{
