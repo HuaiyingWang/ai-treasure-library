@@ -1,0 +1,89 @@
+====================================================
+  AI 創作與效率工具包 | HY.studio — 更新紀錄
+====================================================
+
+日期：2026-03-23
+
+----------------------------------------------------
+[1] .resume-column-grid 卡片樣式重新設計
+----------------------------------------------------
+目標：卡片設計太普通，改為有質感的玻璃擬態風格
+
+變更項目（style.css）：
+
+  .resume-column h3
+  - 移除粗黑底線，改為小字 + 大字距的質感標題
+  - 加入 sage green 圓點裝飾（::before）
+
+  .resume-item
+  - 加入玻璃擬態效果：rgba 半透明白色背景 + backdrop-filter: blur(14px)
+  - 白色光澤邊框 border: 1px solid rgba(255,255,255,0.85)
+  - 圓角 18px
+  - Hover：上浮 translateY(-4px) + 左移 + 陰影加深
+  - Hover：左側出現 sage green → warm beige 漸層條（::after，帶 scaleY 動畫）
+
+  .contact-link
+  - 整個連結改為玻璃卡片樣式，與 resume-item 一致
+  - Hover 效果相同（上浮 + 陰影）
+
+  .contact-icon
+  - 改為 sage green 半透明漸層底色 + 細邊框
+
+
+----------------------------------------------------
+[2] .about-text 排版重新設計
+----------------------------------------------------
+目標：排版太普通，改為雜誌感編輯風格
+
+變更項目（style.css）：
+
+  .about-text
+  - 移除 text-align: center，改為左對齊
+  - 加入 position: relative 供裝飾元素定位
+
+  .about-text h2 small（嗨，歡迎來到）
+  - 改為 sage green 藥丸 Badge 樣式
+  - 圓角 100px + 背景色 rgba(122,143,125,0.12)
+  - 小圓點裝飾（::before）
+  - 全大寫 + 字距 4px
+
+  .about-text h2
+  - 字重提升至 800，字距收緊 -1.5px
+  - 加入 ::after 短線分隔符（sage green → warm beige 漸層）
+
+  .about-text p
+  - 行高提升至 2，最大寬 560px
+
+
+----------------------------------------------------
+[3] 大字水印裝飾 — 新增 SVG 寫字路徑動畫
+----------------------------------------------------
+目標：將 CSS ::before 水印改為 SVG 筆畫繪製動畫
+
+變更項目（index.html）：
+  - 在 .about-text 內新增 <svg class="about-watermark">
+  - SVG 內含 <text class="about-watermark-text">HY</text>
+
+變更項目（style.css）：
+  - 移除 .about-text::before 偽元素
+  - 加入 .about-watermark SVG 定位樣式
+  - .about-watermark-text：fill: none、stroke 描邊
+  - stroke-dasharray + stroke-dashoffset 動畫（draw-hy）
+    → 字的輪廓像被筆一筆描出，0.4s 延遲後啟動，共 2.8s
+
+
+----------------------------------------------------
+[4] 大字水印裝飾 — 改為漸進填充動畫
+----------------------------------------------------
+目標：從寫字路徑效果改為透明 → #cfbea4 漸進填充
+
+變更項目（style.css）：
+
+  .about-watermark-text
+  - 移除所有 stroke / stroke-dasharray 屬性
+  - fill 改為 #cfbea4
+  - 初始 fill-opacity: 0（透明）
+  - 動畫 fill-hy：fill-opacity 0 → 1，2s ease-out，延遲 0.3s
+  - 使用 fill-opacity 而非 opacity，不影響元素其他屬性
+
+====================================================

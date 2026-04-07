@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 創作與效率工具包 | HY.studio</title>
-    <meta name="description" content="AI 創作與效率工具包 — 從焦慮到行動的第一步，免費 AI 工具與精選課程">
+    <title>HY.studio｜AI 創作與效率工具包</title>
+    <meta name="description" content="HY.studio — AI 創作與效率工具包，從焦慮到行動的第一步。免費 AI 工具、LINE 貼圖生成、社群貼文生成器，零門檻開始你的 AI 創作之旅。">
+    <meta name="keywords" content="AI工具, LINE貼圖, 社群貼文, Prompt生成, HY studio, 免費AI">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -12,119 +13,137 @@
 </head>
 <body>
 
-    <!-- 波浪背景裝飾 -->
-    <div class="background-shapes">
-        <div class="wave-shape wave-1"></div>
-        <div class="wave-shape wave-3"></div>
-    </div>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主要導覽">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo-link" aria-label="HY.studio 首頁">
+                <span class="logo-mark" aria-hidden="true">HY</span>
+                <span class="logo-text">studio</span>
+            </a>
+            <div class="nav-links" role="list">
+                <a href="#about"    class="nav-link" role="listitem">關於</a>
+                <a href="#tools"    class="nav-link" role="listitem">工具</a>
+                <a href="#features" class="nav-link" role="listitem">特色</a>
+                <a href="#contact"  class="nav-cta"  role="listitem" id="nav-contact-btn">聯繫我</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- ===== HERO ===== -->
-    <section class="hero">
-        <img src="images/portfolio_head.png" alt="AI 創作者" class="hero-avatar">
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="about-section fade-in">
-        <div class="about-content">
-            <div class="about-text">
-                <svg class="about-watermark" viewBox="0 0 500 220" aria-hidden="true">
-                    <text x="8" y="195" class="about-watermark-text">HY</text>
-                </svg>
-                <h2>
-                    <small>嗨，歡迎來到</small><br>
-                    HY.studio｜AI 創作與生產力
-                </h2>
-                <p>
-                    如果你剛開始接觸 AI，這裡整理了幾個我每天都在用的 AI 工具，不用寫程式、不用設計背景就可以開始創作。<br>AI 不只是關於技術，更是關於人、關於創作、關於那些讓產品值得使用的小細節。它不只是要好看，更要讓人感覺輕鬆自在。
+    <section class="hero" id="hero" aria-label="主視覺區塊">
+        <div class="hero-inner">
+            <!-- 左欄：文字 -->
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    免費使用 · 零門檻 · 立即開始
+                </div>
+                <h1 class="hero-title" id="hero-title">
+                    用 AI 創作<br>
+                    <span class="hero-title-accent">你的無限可能</span>
+                </h1>
+                <p class="hero-desc">
+                    不需要設計背景，不需要寫程式。<br>
+                    讓 AI 幫你完成創作，從靈感到成品只需幾分鐘。
                 </p>
+                <div class="hero-actions">
+                    <a href="#tools" class="btn-primary" id="hero-cta-tools">
+                        探索 AI 工具
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/huaiying_ai" target="_blank" rel="noopener noreferrer" class="btn-outline" id="hero-cta-ig">
+                        追蹤我的 IG
+                    </a>
+                </div>
+                <!-- 信任指標 -->
+                <div class="trust-bar" aria-label="信任指標">
+                    <div class="trust-item">
+                        <span class="trust-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        完全免費
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        無需註冊
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        即開即用
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右欄：Avatar -->
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-img-wrapper" id="hero-avatar-frame">
+                    <div class="hero-img-bg"></div>
+                    <img src="images/portfolio_head.png" alt="HY — AI 創作者 Huaiying" class="hero-avatar" id="hero-avatar" loading="eager">
+                </div>
+                <!-- 浮動卡 -->
+                <div class="float-card card-top">
+                    <span class="float-icon">✨</span>
+                    <div>
+                        <div class="float-title">AI 驅動</div>
+                        <div class="float-sub">智慧創作輔助</div>
+                    </div>
+                </div>
+                <div class="float-card card-bottom">
+                    <span class="float-icon">🚀</span>
+                    <div>
+                        <div class="float-title">3 個工具</div>
+                        <div class="float-sub">全部免費使用</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="projects-section fade-in">
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <a href="https://gemini.google.com/gem/1bH7UKAQ98j5DDGZ2HF9pX1z3nfZRypis?usp=sharing" target="_blank" class="project-card">
-                <img src="images/project1.png" alt="LINE 貼圖生成器" class="project-card-preview">
-                <span class="project-number">1</span>
-                <div class="project-name">LINE 貼圖生成器</div>
-                <div class="project-desc">像抽卡一樣，隨機生成專屬 LINE 貼圖</div>
-            </a>
-
-            <!-- Project 2 -->
-            <a href="https://gemini.google.com/gem/1B8_Dv3RvipbUSTOd32ougni2UcuUi9Gp?usp=sharing" target="_blank" class="project-card">
-                <img src="images/project2.png" alt=" 貼文圖片生成器" class="project-card-preview">
-                <span class="project-number">2</span>
-                <div class="project-name"> 貼文圖片生成器</div>
-                <div class="project-desc">AI 自動排版配色，快速產出社群圖片</div>
-            </a>
-
-            <!-- Project 3 -->
-            <a href="https://huaiyingwang.github.io/post-generator/" target="_blank" class="project-card">
-                <img src="images/project3.png" alt="社群貼文生成器" class="project-card-preview">
-                <span class="project-number">3</span>
-                <div class="project-name">社群貼文生成器</div>
-                <div class="project-desc">把焦慮變成創作，一鍵生成完整Prompt</div>
-            </a>
-        </div>
-    </section>
-
-    <!-- ===== RESUME / FEATURES ===== -->
-    <section class="resume-section fade-in">
-        <div class="resume-grid">
-            <div class="resume-column-inner">
-                <div class="resume-column-grid">
-                    <!-- Column 1: 工具特色 -->
-                    <div class="resume-column">
-                        <h3>工具特色</h3>
-                        <div class="resume-item">
-                            <div class="resume-item-title">零門檻上手</div>
-                            <div class="resume-item-sub">不需程式背景，任何人都能使用</div>
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section fade-in" id="about" aria-label="關於 HY.studio">
+        <div class="section-wrap">
+            <div class="section-eyebrow">About Me</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>嗨，我是 <span class="text-accent">Huaiying</span></h2>
+                    <p>如果你剛開始接觸 AI，這裡整理了幾個我每天都在用的工具。不用寫程式、不用設計背景，任何人都可以開始創作。</p>
+                    <p>AI 不只是技術，更是關於人、關於創作、關於讓每一個工具都讓你感覺輕鬆自在。</p>
+                    <div class="about-tags" aria-label="專業領域">
+                        <span class="tag">AI 創作</span>
+                        <span class="tag">Prompt 設計</span>
+                        <span class="tag">社群經營</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">LINE 貼圖</span>
+                    </div>
+                </div>
+                <div class="about-card" role="complementary">
+                    <div class="about-card-top">
+                        <div class="about-avatar-wrap">
+                            <img src="images/avatar.png" alt="Huaiying 頭像" loading="lazy"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="avatar-initial" aria-hidden="true" style="display:none">HY</div>
                         </div>
-                        <div class="resume-item">
-                            <div class="resume-item-title">AI 驅動創作</div>
-                            <div class="resume-item-sub">讓 AI 幫你完成排版、配色、設計</div>
-                        </div>
-                        <div class="resume-item">
-                            <div class="resume-item-title">多元應用場景</div>
-                            <div class="resume-item-sub">LINE 貼圖、社群貼文、Prompt 生成</div>
-                        </div>
-                        <div class="resume-item">
-                            <div class="resume-item-title">完全免費</div>
-                            <div class="resume-item-sub">所有工具皆可免費使用</div>
+                        <div>
+                            <div class="about-name">Huaiying Wang</div>
+                            <div class="about-role">AI Creator &amp; Designer</div>
                         </div>
                     </div>
-
-                    <!-- Column 2: 使用場景 -->
-                    <div class="resume-column">
-                        <h3>使用場景</h3>
-                        <div class="resume-item">
-                            <div class="resume-item-title">社群經營者</div>
-                            <div class="resume-item-sub">快速產出 IG / FB 貼文圖片</div>
-                        </div>
-                        <div class="resume-item">
-                            <div class="resume-item-title">創作新手</div>
-                            <div class="resume-item-sub">不知道怎麼跟 AI 對話？一鍵生成 Prompt</div>
-                        </div>
-                        <div class="resume-item">
-                            <div class="resume-item-title">LINE 玩家</div>
-                            <div class="resume-item-sub">隨機生成專屬貼圖，聊天更有趣</div>
-                        </div>
-                    </div>
-
-                    <!-- Column 3: 聯繫方式 -->
-                    <div class="resume-column">
-                        <h3>Contact</h3>
-                        <a href="https://www.instagram.com/huaiying_ai" target="_blank" class="contact-link">
-                            <span class="contact-icon">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" focusable="false" class="chakra-icon css-1rsfhxy" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path></svg>
-                            </span>
-                            追蹤我的IG
+                    <blockquote class="about-quote">
+                        「從焦慮到行動的第一步，就是打開一個工具開始用。」
+                    </blockquote>
+                    <div class="about-social">
+                        <a href="https://www.instagram.com/huaiying_ai" target="_blank" rel="noopener noreferrer"
+                           class="social-btn" id="about-ig-link" aria-label="前往 Instagram @huaiying_ai">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            @huaiying_ai
                         </a>
-                        <a href="mailto:love520297@gmail.com" class="contact-link">
-                            <span class="contact-icon">✉️</span>
-                            歡迎與我聯絡
+                        <a href="mailto:love520297@gmail.com" class="social-btn" id="about-email-link" aria-label="寄信給 Huaiying">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            寄信給我
                         </a>
                     </div>
                 </div>
@@ -132,63 +151,237 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="footer-links">
-            <a href="https://www.instagram.com/huaiying_ai" target="_blank">關於我</a>
-            <a href="mailto:love520297@gmail.com">與我聯絡</a>
+    <!-- ===== TOOLS ===== -->
+    <section class="tools-section fade-in" id="tools" aria-label="AI 工具集">
+        <div class="section-wrap">
+            <div class="section-eyebrow">AI Tools</div>
+            <div class="section-head">
+                <h2>精選 <span class="text-accent">AI 工具</span></h2>
+                <p>每個工具都是為了讓創作變得更輕鬆而生，打開即用，立即上手。</p>
+            </div>
+            <div class="tools-grid">
+
+                <!-- Tool 1 -->
+                <a href="https://gemini.google.com/gem/1bH7UKAQ98j5DDGZ2HF9pX1z3nfZRypis?usp=sharing"
+                   target="_blank" rel="noopener noreferrer"
+                   class="tool-card" id="tool-card-1"
+                   aria-label="LINE 貼圖生成器 — 像抽卡一樣，隨機生成專屬 LINE 貼圖">
+                    <div class="tool-img-area tool-color-1">
+                        <img src="images/project1.png" alt="LINE 貼圖生成器截圖" class="tool-img" loading="lazy">
+                        <span class="tool-num" aria-hidden="true">01</span>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-badge tool-badge-1">Gemini AI</div>
+                        <h3 class="tool-name">LINE 貼圖生成器</h3>
+                        <p class="tool-desc">像抽卡一樣，隨機生成專屬 LINE 貼圖，讓聊天更有個性。</p>
+                        <span class="tool-link">
+                            立即使用
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Tool 2 -->
+                <a href="https://gemini.google.com/gem/1B8_Dv3RvipbUSTOd32ougni2UcuUi9Gp?usp=sharing"
+                   target="_blank" rel="noopener noreferrer"
+                   class="tool-card" id="tool-card-2"
+                   aria-label="貼文圖片生成器 — AI 自動排版配色，快速產出社群圖片">
+                    <div class="tool-img-area tool-color-2">
+                        <img src="images/project2.png" alt="貼文圖片生成器截圖" class="tool-img" loading="lazy">
+                        <span class="tool-num" aria-hidden="true">02</span>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-badge tool-badge-2">Gemini AI</div>
+                        <h3 class="tool-name">貼文圖片生成器</h3>
+                        <p class="tool-desc">AI 自動排版配色，快速產出高質感社群圖片。</p>
+                        <span class="tool-link">
+                            立即使用
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Tool 3 -->
+                <a href="https://huaiyingwang.github.io/post-generator/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="tool-card" id="tool-card-3"
+                   aria-label="社群貼文生成器 — 把焦慮變成創作，一鍵生成完整Prompt">
+                    <div class="tool-img-area tool-color-3">
+                        <img src="images/project3.png" alt="社群貼文生成器截圖" class="tool-img" loading="lazy">
+                        <span class="tool-num" aria-hidden="true">03</span>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-badge tool-badge-3">Web App</div>
+                        <h3 class="tool-name">社群貼文生成器</h3>
+                        <p class="tool-desc">把焦慮變成創作動力，一鍵生成完整 Prompt。</p>
+                        <span class="tool-link">
+                            立即使用
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+            </div>
         </div>
-        <p class="copyright">&copy; 2025 AI 創作與效率工具包 | Powered by HY.studio</p>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features-section fade-in" id="features" aria-label="工具特色">
+        <div class="section-wrap">
+            <div class="section-eyebrow">Why Choose</div>
+            <div class="section-head">
+                <h2>為什麼選擇 <span class="text-accent">HY.studio</span></h2>
+                <p>從設計到功能，每一個細節都圍繞著「讓你更輕鬆」而生。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" id="feat-1">
+                    <div class="feat-icon feat-icon-blue" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h3>5 分鐘上手</h3>
+                    <p>打開即用，零技術背景，任何人都能在 5 分鐘內開始第一個 AI 創作。</p>
+                </div>
+                <div class="feature-card" id="feat-2">
+                    <div class="feat-icon feat-icon-violet" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3>AI 全程輔助</h3>
+                    <p>排版、配色、文案，讓 AI 幫你搞定，你只需要輸入你的想法。</p>
+                </div>
+                <div class="feature-card" id="feat-3">
+                    <div class="feat-icon feat-icon-green" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>多元應用場景</h3>
+                    <p>LINE 貼圖、IG 貼文、Prompt 生成，一站式滿足所有創作需求。</p>
+                </div>
+                <div class="feature-card" id="feat-4">
+                    <div class="feat-icon feat-icon-rose" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>永久免費</h3>
+                    <p>所有工具完全免費，不需訂閱、不需信用卡，直接使用不設限。</p>
+                </div>
+            </div>
+
+            <!-- 使用場景橫幅 -->
+            <div class="use-cases" aria-label="適合對象">
+                <div class="use-case-label">適合你如果你是 →</div>
+                <div class="use-case-chips">
+                    <span class="use-chip">🖼️ 社群經營者</span>
+                    <span class="use-chip">✍️ 創作新手</span>
+                    <span class="use-chip">💬 LINE 玩家</span>
+                    <span class="use-chip">📱 內容創作者</span>
+                    <span class="use-chip">🎨 設計愛好者</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section fade-in" id="contact" aria-label="聯繫方式">
+        <div class="section-wrap">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <div class="section-eyebrow">Get in Touch</div>
+                    <h2>有想法嗎？<br><span class="text-accent">來找我聊聊</span></h2>
+                    <p>歡迎合作提案、工具建議，或只是想說聲嗨，都可以找我！</p>
+                </div>
+                <div class="contact-actions">
+                    <a href="https://www.instagram.com/huaiying_ai" target="_blank" rel="noopener noreferrer"
+                       class="contact-btn btn-ig" id="contact-ig" aria-label="前往 Instagram @huaiying_ai">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        追蹤 Instagram
+                    </a>
+                    <a href="mailto:love520297@gmail.com" class="contact-btn btn-email" id="contact-email" aria-label="寄信至 love520297@gmail.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        寄信給我
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-mark sm" aria-hidden="true">HY</span>
+                <span>HY.studio</span>
+            </div>
+            <nav class="footer-nav" aria-label="頁尾導覽">
+                <a href="https://www.instagram.com/huaiying_ai" target="_blank" rel="noopener noreferrer" id="footer-ig">關於我</a>
+                <a href="mailto:love520297@gmail.com" id="footer-email">與我聯絡</a>
+                <a href="#tools" id="footer-tools">AI 工具</a>
+            </nav>
+            <p class="copyright">&copy; 2025 HY.studio &middot; Powered by AI &amp; 創意</p>
+        </div>
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+    // ===== Navbar 滾動效果 =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // ===== Fade-in 動畫 =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
         });
+    }, { threshold: 0.06, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    // ===== Hero 輕微視差 =====
+    const avatarFrame = document.getElementById('hero-avatar-frame');
+    if (avatarFrame && window.matchMedia('(hover: hover)').matches) {
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 12;
+            const y = (e.clientY / window.innerHeight - 0.5) * 8;
+            avatarFrame.style.transform = `translate(${x}px, ${y}px)`;
+        }, { passive: true });
+    }
 
-        // Card click ripple effect
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousedown', function(e) {
-                this.style.transform = 'scale(0.97)';
-            });
-            card.addEventListener('mouseup', function(e) {
-                this.style.transform = '';
-            });
-            card.addEventListener('mouseleave', function(e) {
-                this.style.transform = '';
-            });
+    // ===== Hero 標題進場 =====
+    (function() {
+        const title = document.querySelector('.hero-title');
+        const desc  = document.querySelector('.hero-desc');
+        const badge = document.querySelector('.hero-badge');
+        const acts  = document.querySelector('.hero-actions');
+        const trust = document.querySelector('.trust-bar');
+        [badge, title, desc, acts, trust].forEach((el, i) => {
+            if (!el) return;
+            el.style.cssText = 'opacity:0;transform:translateY(22px);transition:none';
+            setTimeout(() => {
+                el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 120 + i * 130);
         });
+    })();
 
-        // Parallax effect on hero avatar
-        const heroAvatar = document.querySelector('.hero-avatar');
-        if (heroAvatar) {
-            window.addEventListener('mousemove', (e) => {
-                const x = (e.clientX / window.innerWidth - 0.5) * 20;
-                const y = (e.clientY / window.innerHeight - 0.5) * 20;
-                heroAvatar.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        }
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+    // ===== 工具卡片 hover 效果 =====
+    document.querySelectorAll('.tool-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-6px)';
         });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    // ===== 平滑滾動 =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
     </script>
 </body>
 </html>
